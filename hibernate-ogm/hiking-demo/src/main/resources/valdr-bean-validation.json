@@ -1,0 +1,4 @@
+{
+    "modelPackages": ["org.hibernate.ogm.hiking.rest.model"],
+    "outputFullTypeName": false
+}

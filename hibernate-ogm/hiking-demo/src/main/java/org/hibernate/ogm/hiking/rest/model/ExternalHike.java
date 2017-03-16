@@ -3,13 +3,22 @@ package org.hibernate.ogm.hiking.rest.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.hibernate.ogm.hiking.model.Hike;
 import org.hibernate.ogm.hiking.model.Section;
 
 public class ExternalHike {
 
 	private String id;
+
+	@NotNull(message = "Starting point must not be null")
+	@Size(min = 3, max = 20, message = "Must be between three and 20 characters long")
 	private String from;
+
+	@NotNull(message = "End point must not be null")
+	@Size(min = 3, max = 20, message = "Must be between three and 20 characters long")
 	private String to;
 	private ExternalTrip recommendedTrip;
 	private List<Section> sections = new ArrayList<>();

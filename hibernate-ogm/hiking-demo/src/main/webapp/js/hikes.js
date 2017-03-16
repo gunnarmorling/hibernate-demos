@@ -1,6 +1,6 @@
 angular
 
-    .module('hikesApp', ['ngRoute', 'restangular'])
+    .module('hikesApp', ['ngRoute', 'restangular', 'valdr'])
 
     .config(function(RestangularProvider) {
         RestangularProvider.setBaseUrl('hiking-manager');
@@ -31,6 +31,10 @@ angular
             .otherwise({
                 redirectTo:'/'
             });
+    })
+
+    .config(function(valdrProvider) {
+        valdrProvider.setConstraintUrl('webresources/validation');
     })
 
     .factory('PersistenceService', ['Restangular', function(Restangular) {
