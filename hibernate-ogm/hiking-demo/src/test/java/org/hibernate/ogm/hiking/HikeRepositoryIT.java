@@ -11,12 +11,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.hibernate.ogm.hiking.model.Hike;
-import org.hibernate.ogm.hiking.model.Person;
 import org.hibernate.ogm.hiking.model.Trip;
 import org.hibernate.ogm.hiking.repository.HikeRepository;
 import org.hibernate.ogm.hiking.repository.TripRepository;
 import org.hibernate.validator.internal.util.Version;
-
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.transaction.api.annotation.Transactional;
@@ -86,7 +84,7 @@ public class HikeRepositoryIT {
 
 	@Test
 	public void testValidation() {
-		assertEquals( "6.0.0.Alpha1", Version.getVersionString() );
+		assertEquals( "6.0.0.Alpha2", Version.getVersionString() );
 
 	}
 }

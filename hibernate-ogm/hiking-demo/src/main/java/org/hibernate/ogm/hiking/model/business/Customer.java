@@ -1,9 +1,6 @@
 package org.hibernate.ogm.hiking.model.business;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-
-import org.hibernate.validator.constraints.Email;
 
 /**
  * @author Emmanuel Bernard &lt;emmanuel@hibernate.org&gt;
@@ -12,6 +9,5 @@ import org.hibernate.validator.constraints.Email;
 public class Customer {
 	public String name;
 
-	@Email
 	public String email;
 }

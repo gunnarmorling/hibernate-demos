@@ -7,14 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.Valid;
 
 /**
  * @author Emmanuel Bernard &lt;emmanuel@hibernate.org&gt;
  */
 @Entity
 @Table(name="TripOrder")
-@ValidOrder
 public class Order {
 
 	@Id
@@ -29,6 +27,6 @@ public class Order {
 
 	public LocalDate shipmentDate;
 
-	@Embedded @Valid
+	@Embedded
 	public Customer customer;
 }
