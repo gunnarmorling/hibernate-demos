@@ -1,5 +1,7 @@
 package org.hibernate.ogm.hiking.model.business;
 
+import java.time.LocalDate;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,15 +14,20 @@ import javax.validation.Valid;
  */
 @Entity
 @Table(name="TripOrder")
+@ValidOrder
 public class Order {
+
 	@Id
 	@GeneratedValue
 	public Long id;
 
-	@OrderNumber
 	public String number;
 
 	public long tripId;
+
+	public LocalDate orderDate;
+
+	public LocalDate shipmentDate;
 
 	@Embedded @Valid
 	public Customer customer;
