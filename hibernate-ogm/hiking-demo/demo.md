@@ -28,7 +28,7 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
 @Repeatable(ValidOrder.List.class)
-@Constraint( validatedBy = ValidOrder.OrderNumberValidator.class )
+@Constraint( validatedBy = ValidOrder.OrderValidator.class )
 public @interface ValidOrder {
 
 	String message() default "Invalid order shipment date must be after order date";
@@ -41,7 +41,7 @@ public @interface ValidOrder {
 		ValidOrder[] value();
 	}
 
-	class OrderNumberValidator implements ConstraintValidator<ValidOrder, Order> {
+	class OrderValidator implements ConstraintValidator<ValidOrder, Order> {
 
 		@Override
 		public boolean isValid(Order value, ConstraintValidatorContext context) {
