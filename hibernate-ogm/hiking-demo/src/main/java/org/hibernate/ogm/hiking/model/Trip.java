@@ -3,12 +3,12 @@ package org.hibernate.ogm.hiking.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,7 +22,7 @@ public class Trip {
 	@GeneratedValue(strategy= GenerationType.TABLE)
 	public long id;
 
-	public String name;
+	public String tripName;
 
 	@Temporal(TemporalType.DATE )
 	public Date startDate;
@@ -30,7 +30,7 @@ public class Trip {
 	@Temporal(TemporalType.DATE )
 	public Date endDate;
 
-	public double price;
+	public long price;
 
 	@Embedded
 	public Person organizer;

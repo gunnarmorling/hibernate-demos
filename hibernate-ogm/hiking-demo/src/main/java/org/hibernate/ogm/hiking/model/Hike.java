@@ -9,20 +9,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedNativeQuery;
 import javax.persistence.OrderColumn;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.Type;
-
 @Entity
-@NamedNativeQuery( name = "hikesByTripId", query = "{ recommendedTrip_id: { $in: [ 27 ] } }", resultClass = Hike.class )
+//@NamedNativeQuery( name = "hikesByTripId", query = "{ recommendedTrip_id: { $in: [ 27 ] } }", resultClass = Hike.class )
 public class Hike {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Type(type = "objectid")
-	public String id;
+	public long id;
 
 	@NotNull
 	public String start;
@@ -34,7 +30,7 @@ public class Hike {
 	public Trip recommendedTrip;
 
 	@ElementCollection
-	@OrderColumn(name="order")
+	@OrderColumn(name="sectionOrder")
 	public List<Section> sections = new ArrayList<>();
 
 	Hike() {

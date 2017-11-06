@@ -4,11 +4,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import org.hibernate.ogm.hiking.model.Hike;
 import org.hibernate.ogm.hiking.model.Person;
 import org.hibernate.ogm.hiking.model.Trip;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class ExternalTripWithHikes {
 
@@ -27,7 +27,7 @@ public class ExternalTripWithHikes {
 
 	public ExternalTripWithHikes(Trip trip) {
 		this.id = trip.id;
-		this.name = trip.name;
+		this.name = trip.tripName;
 		this.startDate = trip.startDate;
 		this.endDate = trip.endDate;
 		this.price = trip.price;

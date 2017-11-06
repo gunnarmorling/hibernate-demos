@@ -1,11 +1,15 @@
 package org.hibernate.ogm.hiking.model;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Section {
 
+    @Column(name="start")
 	public String from;
+
+    @Column(name="destination")
 	public String to;
 
 	Section() {

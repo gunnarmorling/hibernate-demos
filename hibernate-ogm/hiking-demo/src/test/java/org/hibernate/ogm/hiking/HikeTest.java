@@ -1,8 +1,8 @@
 package org.hibernate.ogm.hiking;
 
-import java.util.List;
-
 import static org.fest.assertions.Assertions.assertThat;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,10 +10,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.hibernate.ogm.hiking.model.Hike;
-import org.hibernate.ogm.hiking.model.Person;
 import org.hibernate.ogm.hiking.model.Section;
 import org.hibernate.ogm.hiking.model.Trip;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -78,7 +76,7 @@ public class HikeTest {
 
 		Hike hike = new Hike( "San Francisco", "Oakland" );
 		Trip trip = new Trip();
-		trip.name = "Nappa Valley Unit Test";
+		trip.tripName = "Nappa Valley Unit Test";
 
 		hike.recommendedTrip = trip;
 		trip.availableHikes.add( hike );
@@ -92,7 +90,7 @@ public class HikeTest {
 		hike = entityManager.find( Hike.class, hike.id );
 
 		assertThat( hike.recommendedTrip ).isNotNull();
-		assertThat( hike.recommendedTrip.name ).isEqualTo( "Nappa Valley Unit Test" );
+		assertThat( hike.recommendedTrip.tripName ).isEqualTo( "Nappa Valley Unit Test" );
 
 		entityManager.getTransaction().commit();
 	}
@@ -118,7 +116,7 @@ public class HikeTest {
 
 		Hike hike = new Hike( "San Francisco", "Oakland" );
 		Trip trip = new Trip();
-		trip.name = "Nappa Valley Unit Test";
+		trip.tripName = "Nappa Valley Unit Test";
 
 		hike.recommendedTrip = trip;
 		trip.availableHikes.add( hike );

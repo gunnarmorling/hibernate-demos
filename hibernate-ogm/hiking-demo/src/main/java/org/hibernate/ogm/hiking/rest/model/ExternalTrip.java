@@ -11,7 +11,7 @@ public class ExternalTrip {
 	private String name;
 	private Date startDate;
 	private Date endDate;
-	private double price;
+	private long price;
 	private Person organizer;
 
 	public ExternalTrip() {
@@ -19,7 +19,7 @@ public class ExternalTrip {
 
 	public ExternalTrip(Trip trip) {
 		this.id = trip.id;
-		this.name = trip.name;
+		this.name = trip.tripName;
 	}
 
 	public ExternalTrip(Trip trip, boolean fullLoad) {
@@ -34,7 +34,7 @@ public class ExternalTrip {
 	}
 
 	public void populateTrip(Trip trip) {
-		trip.name = name;
+		trip.tripName = name;
 		trip.startDate = startDate;
 		trip.endDate = endDate;
 		trip.price = price;
@@ -73,11 +73,11 @@ public class ExternalTrip {
 		this.endDate = endDate;
 	}
 
-	public double getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 

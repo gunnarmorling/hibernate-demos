@@ -1,22 +1,14 @@
 package org.hibernate.ogm.hiking.rest;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 
 import org.hibernate.ogm.hiking.model.Hike;
 import org.hibernate.ogm.hiking.model.Person;
@@ -24,7 +16,6 @@ import org.hibernate.ogm.hiking.model.Section;
 import org.hibernate.ogm.hiking.model.Trip;
 import org.hibernate.ogm.hiking.repository.HikeRepository;
 import org.hibernate.ogm.hiking.repository.TripRepository;
-import org.hibernate.ogm.hiking.rest.model.ExternalHike;
 
 @Path("/admin")
 @Stateless
@@ -39,7 +30,7 @@ public class AdminResource {
 	@PersistenceContext(unitName="hike-PU-JTA")
 	private EntityManager hikeEm;
 
-	@PersistenceContext(unitName="business")
+	@PersistenceContext//(unitName="business")
 	private EntityManager businessEm;
 
 	public AdminResource() {
@@ -52,8 +43,8 @@ public class AdminResource {
 		clearHikeAndTrips(hikeEm);
 
 		Trip corsica = new Trip();
-		corsica.name = "Corsica from north to south";
-		corsica.price = 254.9;
+		corsica.tripName = "Corsica from north to south";
+		corsica.price = 2549L;
 		corsica.organizer = new Person( "Emmanuel" );
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		corsica.startDate = dateFormat.parse( "2015-04-10" );
@@ -72,8 +63,8 @@ public class AdminResource {
 
 
 		Trip briceCanyon = new Trip();
-		briceCanyon.name = "Brice canyon";
-		briceCanyon.price = 254.9;
+		briceCanyon.tripName = "Brice canyon";
+		briceCanyon.price = 2549L;
 		briceCanyon.organizer = new Person( "Emmanuel" );
 		briceCanyon.startDate = dateFormat.parse( "2015-06-13" );
 		briceCanyon.endDate = dateFormat.parse( "2015-06-20" );
@@ -91,7 +82,7 @@ public class AdminResource {
 		hikeEm.persist( riggsSpringTrail );
 
 		Trip semiMarathon = new Trip();
-		semiMarathon.name = "Semi-Marathon Paris Versailles";
+		semiMarathon.tripName = "Semi-Marathon Paris Versailles";
 		semiMarathon.startDate = dateFormat.parse( "2015-09-27" );
 		semiMarathon.endDate = dateFormat.parse( "2015-09-27" );
 		semiMarathon.organizer = new Person( "Association Paris Versailles" );

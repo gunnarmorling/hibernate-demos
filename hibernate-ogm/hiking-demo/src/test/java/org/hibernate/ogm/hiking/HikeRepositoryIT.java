@@ -57,10 +57,10 @@ public class HikeRepositoryIT {
 	@Test
 	public void shouldPersistHikeWithRecommendedTrip() {
 		Trip trip = new Trip();
-		trip.name = "test";
+		trip.tripName = "test";
 		trip = tripRepository.createTrip( trip );
 		Hike hike = hikeRepository.createHike( new Hike( "Land's End", "Bristol" ), trip );
-		assertEquals( "test", hike.recommendedTrip.name );
+		assertEquals( "test", hike.recommendedTrip.tripName );
 
 		entityManager.flush();
 
@@ -71,7 +71,7 @@ public class HikeRepositoryIT {
 	@Test
 	public void testNativeQueries() {
 		Trip trip = new Trip();
-		trip.name = "End of the world";
+		trip.tripName = "End of the world";
 		trip = tripRepository.createTrip( trip );
 		Hike hike = hikeRepository.createHike( new Hike( "North pole", "South pole" ), trip );
 

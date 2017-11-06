@@ -1,14 +1,10 @@
 package org.hibernate.ogm.hiking.rest.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.hibernate.ogm.hiking.model.Hike;
-import org.hibernate.ogm.hiking.model.Section;
 
 public class ExternalHikeSummary {
 
-	private String id;
+	private long id;
 	private String from;
 	private String to;
 
@@ -21,11 +17,11 @@ public class ExternalHikeSummary {
 		this.to = hike.destination;
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

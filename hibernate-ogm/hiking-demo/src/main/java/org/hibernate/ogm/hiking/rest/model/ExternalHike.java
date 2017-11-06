@@ -11,7 +11,7 @@ import org.hibernate.ogm.hiking.model.Section;
 
 public class ExternalHike {
 
-	private String id;
+	private long id;
 
 	@NotNull(message = "Starting point must not be null")
 	@Size(min = 3, max = 20, message = "Must be between three and 20 characters long")
@@ -39,11 +39,11 @@ public class ExternalHike {
 		}
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

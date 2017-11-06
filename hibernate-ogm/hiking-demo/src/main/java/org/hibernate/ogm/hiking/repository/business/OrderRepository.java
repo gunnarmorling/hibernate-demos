@@ -2,20 +2,19 @@ package org.hibernate.ogm.hiking.repository.business;
 
 import java.util.List;
 import java.util.UUID;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.hibernate.ogm.hiking.model.Hike;
-import org.hibernate.ogm.hiking.model.Person;
 import org.hibernate.ogm.hiking.model.business.Order;
 import org.hibernate.ogm.hiking.repository.HikeRepository;
 
 @ApplicationScoped
 public class OrderRepository {
 
-	@PersistenceContext(unitName="business")
+	@PersistenceContext//(unitName="business")
 	private EntityManager entityManager;
 
 	@Inject

@@ -16,7 +16,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import org.hibernate.ogm.hiking.model.Hike;
-import org.hibernate.ogm.hiking.model.Person;
 import org.hibernate.ogm.hiking.model.Section;
 import org.hibernate.ogm.hiking.model.Trip;
 import org.hibernate.ogm.hiking.repository.HikeRepository;
@@ -40,7 +39,7 @@ public class HikeResource {
 	@Path("/{id}")
 	@Produces("application/json")
 	public ExternalHike getHikeById(@PathParam("id") String hikeId) {
-		return new ExternalHike( hikeRepository.getHikeById( hikeId ) );
+		return new ExternalHike( hikeRepository.getHikeById( Long.valueOf( hikeId ) ) );
 	}
 
 	@GET
@@ -104,6 +103,6 @@ public class HikeResource {
 	@DELETE
 	@Path("/{id}")
 	public void deleteHike(@PathParam("id") String id) {
-		hikeRepository.deleteHike( id );
+		hikeRepository.deleteHike( Long.valueOf( id ) );
 	}
 }
