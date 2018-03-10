@@ -83,6 +83,7 @@
 					</execution>
 				</executions>
 			</plugin>
+            <!-- 
 			<plugin>
 				<groupId>com.github.alexcojocaru</groupId>
 				<artifactId>elasticsearch-maven-plugin</artifactId>
@@ -110,6 +111,7 @@
 					</execution>
 				</executions>
 			</plugin>
+             -->
 		</plugins>
 	</build>
 </project>
